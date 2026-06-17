@@ -359,14 +359,14 @@
     <text x="100" y="295" font-size="12" text-anchor="middle" fill="#5b5b73">(Раиса, Вадим,</text>
     <text x="100" y="308" font-size="12" text-anchor="middle" fill="#5b5b73">Сулейман)</text>
     
-    <!-- Стрелки к Хадиже -->
-    <line x1="170" y1="100" x2="270" y2="120" stroke="#3D7EEA" stroke-width="2" marker-end="url(#arrowhead)"/>
-    <line x1="170" y1="190" x2="270" y2="150" stroke="#3D7EEA" stroke-width="2" marker-end="url(#arrowhead)"/>
-    <line x1="170" y1="280" x2="270" y2="180" stroke="#3D7EEA" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <!-- Стрелки к Хадиже (кривые) -->
+    <path d="M 170 100 Q 220 110 270 120" stroke="#3D7EEA" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+    <path d="M 170 190 Q 220 170 270 150" stroke="#3D7EEA" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+    <path d="M 170 280 Q 220 230 270 180" stroke="#3D7EEA" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
     
     <!-- Аватар Хадижи (уточка) -->
-    <circle cx="180" cy="145" r="35" fill="#fff" stroke="#3D7EEA" stroke-width="2"/>
-    <text x="180" y="160" font-size="50" text-anchor="middle" dominant-baseline="middle">🦆</text>
+    <circle cx="300" cy="90" r="28" fill="#fff" stroke="#3D7EEA" stroke-width="2"/>
+    <text x="300" y="105" font-size="40" text-anchor="middle" dominant-baseline="middle">🦆</text>
     
     <!-- Хадижа центральная -->
     <rect x="270" y="80" width="160" height="130" rx="6" fill="#3D7EEA" stroke="#3D7EEA" stroke-width="2"/>
@@ -398,15 +398,15 @@
     <text x="600" y="585" font-size="10" text-anchor="middle" fill="#856404">Гид отправляет</text>
     <text x="600" y="598" font-size="10" text-anchor="middle" fill="#856404">ссылку на донаты</text>
     
-    <!-- Хадижа → Умайра -->
-    <line x1="430" y1="145" x2="500" y2="670" stroke="#3D7EEA" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+    <!-- Хадижа → Умайра (кривая) -->
+    <path d="M 430 145 Q 465 400 500 670" stroke="#3D7EEA" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
     <rect x="500" y="650" width="140" height="50" rx="6" fill="#fff" stroke="#e3e8f4" stroke-width="1"/>
     <text x="570" y="670" font-size="12" font-weight="600" text-anchor="middle" fill="#3D7EEA">Умайра</text>
     <text x="570" y="777" font-size="10" text-anchor="middle" fill="#5b5b73">Сколько, когда,</text>
     <text x="570" y="788" font-size="10" text-anchor="middle" fill="#5b5b73">программа</text>
     
-    <!-- Хадижа → Раиса -->
-    <line x1="350" y1="210" x2="350" y2="820" stroke="#3D7EEA" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+    <!-- Хадижа → Раиса (кривая) -->
+    <path d="M 350 210 Q 320 500 350 800" stroke="#3D7EEA" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
     <rect x="270" y="800" width="160" height="50" rx="6" fill="#fff" stroke="#e3e8f4" stroke-width="1"/>
     <text x="350" y="820" font-size="12" font-weight="600" text-anchor="middle" fill="#3D7EEA">Раиса</text>
     <text x="350" y="837" font-size="10" text-anchor="middle" fill="#5b5b73">Сколько, когда, кто</text>
@@ -414,7 +414,7 @@
     <!-- Умайра привлекает специалистов -->
     <text x="500" y="930" font-size="14" font-weight="600" fill="#1a1a2e">Умайра привлекает специалистов:</text>
     
-    <line x1="570" y1="790" x2="570" y2="960" stroke="#3D7EEA" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M 570 700 Q 570 830 570 960" stroke="#3D7EEA" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
     
     <!-- Специалисты -->
     <rect x="320" y="960" width="140" height="50" rx="6" fill="#fff" stroke="#e3e8f4" stroke-width="1"/>
