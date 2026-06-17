@@ -655,7 +655,11 @@
       <input type="checkbox" class="builder-check" data-key="accommodation">
       <div class="builder-label">
         <div class="b-name">Проживание</div>
-        <div class="b-rate">1500 ₽ / чел</div>
+        <div class="b-rate">цена/чел × кол-во чел</div>
+      </div>
+      <div class="builder-qty">
+        <label>₽/чел</label>
+        <input type="number" min="0" data-rate="accommodation" placeholder="0" value="1500" style="width:78px">
       </div>
       <div class="builder-qty">
         <label>чел.</label>
@@ -790,7 +794,7 @@
       return 1200;
     };
     var tieredKeys = ['chudo', 'tea', 'hikefood'];
-    var perPersonKeys = { 'accommodation': 1500 };
+    var perPersonKeys = {};
 
     function fmt(n){ return Math.round(n).toLocaleString('ru-RU') + ' ₽'; }
 
