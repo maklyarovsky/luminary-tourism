@@ -136,6 +136,27 @@
   .diagram-note{margin-top:8px;padding:8px 12px;background:#e9f7f0;border-left:3px solid var(--ok);font-size:12px;color:#1d9e75;line-height:1.4}
   .scheme-stage{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;margin-bottom:20px}
   .scheme-svg{width:100%;height:auto;display:block}
+
+  /* tour builder */
+  .builder{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .builder-item{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+  .builder-item:last-child{border-bottom:none}
+  .builder-item.disabled{opacity:.45}
+  .builder-check{flex-shrink:0;width:20px;height:20px;cursor:pointer;accent-color:var(--blue)}
+  .builder-label{flex:1;min-width:160px}
+  .builder-label .b-name{font-weight:600;font-size:14px;color:var(--ink)}
+  .builder-label .b-rate{font-size:12px;color:var(--muted);margin-top:2px}
+  .builder-qty{display:flex;align-items:center;gap:6px;flex-shrink:0}
+  .builder-qty label{font-size:12px;color:var(--muted)}
+  .builder-qty input{width:56px;border:1px solid var(--line);border-radius:6px;padding:5px 6px;font-size:13px;text-align:center;color:var(--ink);background:#fcfcfe}
+  .builder-qty input:focus{outline:none;border-color:var(--blue)}
+  .builder-sum{flex-shrink:0;min-width:90px;text-align:right;font-weight:600;font-size:14px;color:var(--ink)}
+  .builder-total{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;background:var(--card);border-top:2px solid var(--blue)}
+  .builder-total .t-label{font-size:15px;font-weight:600;color:var(--ink)}
+  .builder-total .t-val{font-size:22px;font-weight:700;color:var(--blue)}
+  .builder-tiers{font-size:11px;color:#9a9ab0;margin-top:2px}
+  .builder-reset{margin-top:14px;font-size:12.5px;color:var(--muted);background:none;border:1px solid var(--line);border-radius:8px;padding:7px 14px;cursor:pointer}
+  .builder-reset:hover{background:var(--card)}
 </style>
 </head>
 <body>
@@ -477,6 +498,199 @@
   </details>
 
   <details class="section">
+  <summary class="section-head"><span class="bar"></span>Конструктор тура<span class="s-arrow">▶</span></summary>
+  <div class="section-body">
+
+  <p style="font-size:13px;color:var(--muted);margin-top:0;margin-bottom:16px">Отмечайте нужные пункты галочками — себестоимость тура посчитается автоматически.</p>
+
+  <div class="builder" id="builder">
+
+    <div class="builder-item">
+      <input type="checkbox" class="builder-check" data-key="transfer-mkh">
+      <div class="builder-label">
+        <div class="b-name">Трансфер из Махачкалы туда-обратно</div>
+        <div class="b-rate">сумма за тур</div>
+      </div>
+      <div class="builder-qty">
+        <label>₽</label>
+        <input type="number" min="0" data-fixed="transfer-mkh" placeholder="0" value="40000">
+      </div>
+      <div class="builder-sum" data-sum="transfer-mkh">0 ₽</div>
+    </div>
+
+    <div class="builder-item">
+      <input type="checkbox" class="builder-check" data-key="transfer-derb">
+      <div class="builder-label">
+        <div class="b-name">Трансфер из Дербента туда-обратно</div>
+        <div class="b-rate">сумма за тур</div>
+      </div>
+      <div class="builder-qty">
+        <label>₽</label>
+        <input type="number" min="0" data-fixed="transfer-derb" placeholder="0" value="40000">
+      </div>
+      <div class="builder-sum" data-sum="transfer-derb">0 ₽</div>
+    </div>
+
+    <div class="builder-item">
+      <input type="checkbox" class="builder-check" data-key="chudo">
+      <div class="builder-label">
+        <div class="b-name">Мастер-класс по чуду</div>
+        <div class="b-rate">1–5 чел — 2000 ₽/чел · 6–12 — 1500 ₽/чел · 13–20 — 1200 ₽/чел</div>
+      </div>
+      <div class="builder-qty">
+        <label>чел.</label>
+        <input type="number" min="0" data-qty="chudo" placeholder="0">
+      </div>
+      <div class="builder-sum" data-sum="chudo">0 ₽</div>
+    </div>
+
+    <div class="builder-item">
+      <input type="checkbox" class="builder-check" data-key="tea">
+      <div class="builder-label">
+        <div class="b-name">Чаепитие и конфеты</div>
+        <div class="b-rate">1–5 чел — 2000 ₽/чел · 6–12 — 1500 ₽/чел · 13–20 — 1200 ₽/чел</div>
+      </div>
+      <div class="builder-qty">
+        <label>чел.</label>
+        <input type="number" min="0" data-qty="tea" placeholder="0">
+      </div>
+      <div class="builder-sum" data-sum="tea">0 ₽</div>
+    </div>
+
+    <div class="builder-item">
+      <input type="checkbox" class="builder-check" data-key="hikefood">
+      <div class="builder-label">
+        <div class="b-name">Продукты для похода</div>
+        <div class="b-rate">1–5 чел — 2000 ₽/чел · 6–12 — 1500 ₽/чел · 13–20 — 1200 ₽/чел</div>
+      </div>
+      <div class="builder-qty">
+        <label>чел.</label>
+        <input type="number" min="0" data-qty="hikefood" placeholder="0">
+      </div>
+      <div class="builder-sum" data-sum="hikefood">0 ₽</div>
+    </div>
+
+    <div class="builder-item">
+      <input type="checkbox" class="builder-check" data-key="souvenir">
+      <div class="builder-label">
+        <div class="b-name">Сувенирный набор</div>
+        <div class="b-rate">сумма за тур</div>
+      </div>
+      <div class="builder-qty">
+        <label>₽</label>
+        <input type="number" min="0" data-fixed="souvenir" placeholder="0" value="">
+      </div>
+      <div class="builder-sum" data-sum="souvenir">0 ₽</div>
+    </div>
+
+    <div class="builder-item">
+      <input type="checkbox" class="builder-check" data-key="museum">
+      <div class="builder-label">
+        <div class="b-name">Билет в Ахтынский музей</div>
+        <div class="b-rate">сумма за тур</div>
+      </div>
+      <div class="builder-qty">
+        <label>₽</label>
+        <input type="number" min="0" data-fixed="museum" placeholder="0" value="200">
+      </div>
+      <div class="builder-sum" data-sum="museum">0 ₽</div>
+    </div>
+
+    <div class="builder-item">
+      <input type="checkbox" class="builder-check" data-key="manager">
+      <div class="builder-label">
+        <div class="b-name">Работа менеджера тура</div>
+        <div class="b-rate">сумма за тур</div>
+      </div>
+      <div class="builder-qty">
+        <label>₽</label>
+        <input type="number" min="0" data-fixed="manager" placeholder="0" value="">
+      </div>
+      <div class="builder-sum" data-sum="manager">0 ₽</div>
+    </div>
+
+    <div class="builder-item">
+      <input type="checkbox" class="builder-check" data-key="content">
+      <div class="builder-label">
+        <div class="b-name">Работа контентмейкера</div>
+        <div class="b-rate">сумма за тур</div>
+      </div>
+      <div class="builder-qty">
+        <label>₽</label>
+        <input type="number" min="0" data-fixed="content" placeholder="0" value="">
+      </div>
+      <div class="builder-sum" data-sum="content">0 ₽</div>
+    </div>
+
+    <div class="builder-item">
+      <input type="checkbox" class="builder-check" data-key="producer">
+      <div class="builder-label">
+        <div class="b-name">Работа продюсера</div>
+        <div class="b-rate">сумма за тур</div>
+      </div>
+      <div class="builder-qty">
+        <label>₽</label>
+        <input type="number" min="0" data-fixed="producer" placeholder="0" value="">
+      </div>
+      <div class="builder-sum" data-sum="producer">0 ₽</div>
+    </div>
+
+    <div class="builder-item">
+      <input type="checkbox" class="builder-check" data-key="astronomer">
+      <div class="builder-label">
+        <div class="b-name">Работа астронома</div>
+        <div class="b-rate">сумма за тур</div>
+      </div>
+      <div class="builder-qty">
+        <label>₽</label>
+        <input type="number" min="0" data-fixed="astronomer" placeholder="0" value="">
+      </div>
+      <div class="builder-sum" data-sum="astronomer">0 ₽</div>
+    </div>
+
+    <div class="builder-item">
+      <input type="checkbox" class="builder-check" data-key="accommodation">
+      <div class="builder-label">
+        <div class="b-name">Проживание</div>
+        <div class="b-rate">1500 ₽ / чел</div>
+      </div>
+      <div class="builder-qty">
+        <label>чел.</label>
+        <input type="number" min="0" data-qty="accommodation" placeholder="0">
+      </div>
+      <div class="builder-sum" data-sum="accommodation">0 ₽</div>
+    </div>
+
+    <div class="builder-item">
+      <input type="checkbox" class="builder-check" data-key="centertour">
+      <div class="builder-label">
+        <div class="b-name">Экскурсия по центру</div>
+        <div class="b-rate">цена/чел × кол-во чел</div>
+      </div>
+      <div class="builder-qty">
+        <label>₽/чел</label>
+        <input type="number" min="0" data-rate="centertour" placeholder="0" style="width:64px">
+      </div>
+      <div class="builder-qty">
+        <label>чел.</label>
+        <input type="number" min="0" data-qty="centertour" placeholder="0">
+      </div>
+      <div class="builder-sum" data-sum="centertour">0 ₽</div>
+    </div>
+
+    <div class="builder-total">
+      <span class="t-label">Итоговая себестоимость</span>
+      <span class="t-val" id="builder-total-val">0 ₽</span>
+    </div>
+
+  </div>
+
+  <button class="builder-reset" id="builder-reset">Сбросить конструктор</button>
+
+  </div>
+  </details>
+
+  <details class="section">
   <summary class="section-head"><span class="bar"></span>Команда и роли<span class="s-arrow">▶</span></summary>
   <div class="section-body">
   <div class="roles">
@@ -553,6 +767,89 @@
     });
     recalc(card);
   });
+
+  /* tour builder */
+  (function(){
+    var builder = document.getElementById('builder');
+    if (!builder) return;
+
+    var tiers = function(qty){
+      if (qty <= 0) return 0;
+      if (qty <= 5) return 2000;
+      if (qty <= 12) return 1500;
+      if (qty <= 20) return 1200;
+      return 1200;
+    };
+    var tieredKeys = ['chudo', 'tea', 'hikefood'];
+    var perPersonKeys = { 'accommodation': 1500 };
+
+    function fmt(n){ return Math.round(n).toLocaleString('ru-RU') + ' ₽'; }
+
+    function calcItem(key){
+      var checkbox = builder.querySelector('[data-key="' + key + '"]');
+      var item = checkbox.closest('.builder-item');
+      var sumEl = builder.querySelector('[data-sum="' + key + '"]');
+      var checked = checkbox.checked;
+      var value = 0;
+
+      if (tieredKeys.indexOf(key) !== -1) {
+        var qtyInput = builder.querySelector('[data-qty="' + key + '"]');
+        var qty = parseInt(qtyInput.value) || 0;
+        var rate = tiers(qty);
+        value = checked ? qty * rate : 0;
+      } else if (perPersonKeys.hasOwnProperty(key)) {
+        var qtyInput2 = builder.querySelector('[data-qty="' + key + '"]');
+        var qty2 = parseInt(qtyInput2.value) || 0;
+        value = checked ? qty2 * perPersonKeys[key] : 0;
+      } else if (builder.querySelector('[data-fixed="' + key + '"]')) {
+        var fixedInput = builder.querySelector('[data-fixed="' + key + '"]');
+        var fixedVal = parseFloat(fixedInput.value) || 0;
+        value = checked ? fixedVal : 0;
+      } else if (builder.querySelector('[data-rate="' + key + '"]')) {
+        var rateInput = builder.querySelector('[data-rate="' + key + '"]');
+        var qtyInput4 = builder.querySelector('[data-qty="' + key + '"]');
+        var rate2 = parseFloat(rateInput.value) || 0;
+        var qty4 = parseInt(qtyInput4.value) || 0;
+        value = checked ? rate2 * qty4 : 0;
+      } else {
+        var qtyInput3 = builder.querySelector('[data-qty="' + key + '"]');
+        if (qtyInput3) {
+          var qty3 = parseInt(qtyInput3.value) || 0;
+          var priceHint = item.querySelector('.b-rate').textContent;
+          value = checked ? qty3 : 0;
+        }
+      }
+
+      sumEl.textContent = fmt(value);
+      item.classList.toggle('disabled', !checked);
+      return value;
+    }
+
+    var allKeys = [];
+    builder.querySelectorAll('[data-key]').forEach(function(cb){ allKeys.push(cb.getAttribute('data-key')); });
+
+    function recalcAll(){
+      var total = 0;
+      allKeys.forEach(function(key){ total += calcItem(key); });
+      document.getElementById('builder-total-val').textContent = fmt(total);
+    }
+
+    builder.querySelectorAll('input').forEach(function(inp){
+      inp.addEventListener('input', recalcAll);
+      inp.addEventListener('change', recalcAll);
+    });
+
+    var resetBtn = document.getElementById('builder-reset');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function(){
+        builder.querySelectorAll('.builder-check').forEach(function(cb){ cb.checked = false; });
+        builder.querySelectorAll('[data-qty]').forEach(function(inp){ inp.value = ''; });
+        recalcAll();
+      });
+    }
+
+    recalcAll();
+  })();
 </script>
 </body>
 </html>
