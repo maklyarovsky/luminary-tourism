@@ -572,6 +572,11 @@
       <input type="checkbox" class="builder-check" data-key="hikefood">
       <div class="builder-label">
         <div class="b-name">Продукты для похода</div>
+        <div class="b-rate">цена/чел × кол-во чел</div>
+      </div>
+      <div class="builder-qty">
+        <label>₽/чел</label>
+        <input type="number" min="0" data-rate="hikefood" placeholder="0" value="1000" style="width:78px">
       </div>
       <div class="builder-qty">
         <label>чел.</label>
@@ -811,7 +816,7 @@
       if (qty <= 20) return 3000;
       return 3000;
     };
-    var tieredKeys = ['chudo', 'hikefood'];
+    var tieredKeys = ['chudo'];
     var tieredKeysTea = ['tea'];
     var perPersonKeys = {};
 
