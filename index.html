@@ -207,12 +207,21 @@
 
     <div class="product">
       <div class="p-head">
-        <span class="p-name">Однодневный тур из Дербента: Ахты</span>
+        <span class="p-name">Однодневный тур из Дербента: Ахты + Люминари + Хрюг</span>
         <span class="p-tag">1 день</span>
       </div>
-      <p class="p-desc">Музей и другие точки (можно взять с сайта). Астропоказ опционально, по погоде.</p>
+      <p class="p-desc">Трансфер, музей, прогулка, смотровая, мастер-класс + обед, опционально астропоказ.</p>
       <div class="p-calc">
-        <label>Себестоимость <input type="number" class="cost" placeholder="—"></label>
+        <div class="cost-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
+          <span>▶</span> Себестоимость (разбор)
+        </div>
+        <div class="cost-breakdown">
+          <label>Трансфер <input type="number" class="cost-item" placeholder="—"></label>
+          <label>Билеты в музей <input type="number" class="cost-item" placeholder="—"></label>
+          <label>Мастер-класс + продукты <input type="number" class="cost-item" placeholder="—"></label>
+          <label>Продюсер тура <input type="number" class="cost-item" placeholder="—"></label>
+          <label style="font-weight:600;color:var(--ink);margin-top:4px;border-top:1px solid var(--line);padding-top:6px">Итого <input type="number" class="cost-total" placeholder="—" style="font-weight:600"></label>
+        </div>
         <label>Цена для туриста <input type="number" class="price" placeholder="—"></label>
         <label class="profit">Прибыль <span class="profit-val">—</span></label>
       </div>
