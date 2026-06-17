@@ -127,6 +127,13 @@
   .notice{background:#fff3cd;border:1px solid #ffeaa7;border-radius:8px;padding:12px 16px;border-left:4px solid #ffc107;flex:1;display:flex;align-items:center;gap:10px}
   .notice strong{color:#856404;font-size:13px;margin:0;white-space:nowrap}
   .notice p{margin:0;color:#856404;font-size:13px;line-height:1.4}
+  .flow-diagram{margin:20px 0;padding:16px;background:#f5f7fc;border-radius:8px;border-left:3px solid var(--blue)}
+  .flow-diagram h4{margin:0 0 12px;font-size:14px;color:var(--ink)}
+  .diagram-row{display:flex;align-items:center;gap:12px;margin-bottom:12px;font-size:13px;flex-wrap:wrap}
+  .diagram-box{background:#fff;border:1px solid var(--line);border-radius:6px;padding:8px 12px;font-weight:600;color:var(--blue);min-width:100px;text-align:center;white-space:nowrap}
+  .diagram-arrow{color:var(--muted);font-size:16px;flex-shrink:0}
+  .diagram-decision{background:#fff3cd;border:1px solid #ffeaa7;border-radius:6px;padding:8px 12px;color:#856404;font-size:12px;min-width:150px}
+  .diagram-note{margin-top:8px;padding:8px 12px;background:#e9f7f0;border-left:3px solid var(--ok);font-size:12px;color:#1d9e75;line-height:1.4}
 </style>
 </head>
 <body>
@@ -309,131 +316,96 @@
   <summary class="section-head"><span class="bar"></span>Сценарии<span class="s-arrow">▶</span></summary>
   <div class="section-body">
 
-  <details class="scen">
-    <summary>
-      <span class="chan inst">Instagram</span>
-      Туристы — платный приезд
-      <span class="arrow">▶</span>
-    </summary>
-    <div class="body">
-      <div class="meta">
-        <span>Запускает: <b>Паша</b></span>
-        <span>Координирует: <b>Хадижа</b></span>
-        <span>Финал. ответственный: <b>Хадижа</b></span>
-      </div>
-      <ol class="flow">
-        <li><div class="who">Паша</div><div class="act">принимает обращение в Instagram, передаёт Хадиже</div></li>
-        <li><div class="who">Хадижа</div><div class="act">берёт обращение в работу, информирует Раису</div></li>
-        <li><div class="who">Раиса + Сулейман</div><div class="act">Раиса в курсе приезда; Сулейман готовится провести экскурсию</div>
-          <div class="branch"><b>Подстраховка:</b> если Сулейман занят — экскурсию ведёт Регина.</div></li>
-        <li><div class="who">Раиса → тётя Белла</div><div class="act">если в программе нужен мастер-класс — Раиса связывается с тётей Беллой</div></li>
-        <li><div class="who">Фатижа</div><div class="act">принимает оплату от туристов</div></li>
-        <li><div class="who">Хадижа</div><div class="act">если заключаем договор — оформляет его</div></li>
-      </ol>
+  <h3 style="margin-top:0;font-size:16px;color:var(--ink)">Поток входящих заявок</h3>
+  
+  <div class="flow-diagram">
+    <h4>Источники заявок:</h4>
+    <div class="diagram-row">
+      <div class="diagram-box">Instagram<br>(Паша)</div>
+      <div class="diagram-arrow">→</div>
+      <div class="diagram-box" style="background:#3d7eea;color:#fff">Хадижа</div>
     </div>
-  </details>
-
-  <details class="scen">
-    <summary>
-      <span class="chan inst">Instagram</span>
-      Школа / учитель — бесплатный приезд школьников
-      <span class="arrow">▶</span>
-    </summary>
-    <div class="body">
-      <div class="meta">
-        <span>Запускает: <b>Паша</b></span>
-        <span>Координирует: <b>Хадижа</b></span>
-        <span>Финал. ответственный: <b>Хадижа</b></span>
-      </div>
-      <ol class="flow">
-        <li><div class="who">Паша</div><div class="act">принимает обращение в Instagram, передаёт Хадиже</div></li>
-        <li><div class="who">Хадижа</div><div class="act">ведёт коммуникацию со школой, дальше тот же процесс координации (Раиса, экскурсия, при необходимости мастер-класс)</div></li>
-      </ol>
-      <div class="branch" style="margin-top:14px"><b>Уточнить:</b> отличается ли цепочка для бесплатного приезда — кто согласовывает даты, есть ли лимит групп, нужен ли договор/согласие от школы.</div>
+    <div class="diagram-row">
+      <div class="diagram-box">Форма на сайте<br>(Хадижа)</div>
+      <div class="diagram-arrow">→</div>
+      <div class="diagram-box" style="background:#3d7eea;color:#fff">Хадижа</div>
     </div>
-  </details>
-
-  <details class="scen">
-    <summary>
-      <span class="chan inst">Instagram</span>
-      Запрос на показ телескопа
-      <span class="arrow">▶</span>
-    </summary>
-    <div class="body">
-      <div class="meta">
-        <span>Запускает: <b>Паша</b></span>
-        <span>Координирует: <b>Хадижа</b></span>
-        <span>Исполнитель: <b>Руслан</b></span>
-      </div>
-      <ol class="flow">
-        <li><div class="who">Паша</div><div class="act">направляет обращение Хадиже</div></li>
-        <li><div class="who">Хадижа</div><div class="act">связывается с Русланом, согласует время наблюдения</div></li>
-      </ol>
+    <div class="diagram-row">
+      <div class="diagram-box">Звонок<br>(Раиса, Вадим,<br>Сулейман)</div>
+      <div class="diagram-arrow">→</div>
+      <div class="diagram-box" style="background:#3d7eea;color:#fff">Хадижа</div>
     </div>
-  </details>
+  </div>
 
-  <details class="scen">
-    <summary>
-      <span class="chan walk">У ворот</span>
-      Туристы случайно приехали к Люминари
-      <span class="arrow">▶</span>
-    </summary>
-    <div class="body">
-      <div class="meta">
-        <span>Запускает: <b>кто заметил</b></span>
-        <span>Канал: <b>общий чат</b></span>
-      </div>
-      <ol class="flow">
-        <li><div class="who">Любой сотрудник</div><div class="act">пишет в общий чат — информирует всех</div></li>
-        <li><div class="who">Кто свободен</div><div class="act">проводит экскурсию во дворе</div></li>
-        <li><div class="who">Кто свободен</div><div class="act">если есть время и возможность — проводит гостей внутрь центра</div></li>
-      </ol>
+  <div class="flow-diagram">
+    <h4>Хадижа решает:</h4>
+    <div class="diagram-row">
+      <span style="color:var(--muted);font-size:12px">Организация?</span>
+      <div class="diagram-arrow">→</div>
+      <div class="diagram-decision">Да: делаем договор (Фатижа)</div>
     </div>
-  </details>
-
-  <details class="scen">
-    <summary>
-      <span class="chan call">Звонок</span>
-      Обращение не через Instagram (звонок)
-      <span class="arrow">▶</span>
-    </summary>
-    <div class="body">
-      <div class="meta">
-        <span>Принимает: <b>Раиса / Сулейман / Вадим</b></span>
-        <span>Координирует: <b>Хадижа</b></span>
-      </div>
-      <ol class="flow">
-        <li><div class="who">Раиса, Сулейман или Вадим</div><div class="act">принимает звонок, передаёт Хадиже</div></li>
-        <li><div class="who">Хадижа</div><div class="act">уточняет тип обращения и берёт его в работу</div></li>
-      </ol>
-
-      <div class="branch" style="margin-top:6px;border-left-color:#1d9e75">
-        <b>Если платный приезд туристов</b> — дальше как в сценарии «Туристы — платный приезд»:
-      </div>
-      <ol class="flow" style="margin-top:10px">
-        <li><div class="who">Хадижа</div><div class="act">берёт обращение в работу, информирует Раису</div></li>
-        <li><div class="who">Раиса + Сулейман</div><div class="act">Раиса в курсе приезда; Сулейман готовится провести экскурсию</div>
-          <div class="branch"><b>Подстраховка:</b> если Сулейман занят — экскурсию ведёт Регина.</div></li>
-        <li><div class="who">Раиса → тётя Белла</div><div class="act">если в программе нужен мастер-класс — Раиса связывается с тётей Беллой</div></li>
-        <li><div class="who">Фатижа</div><div class="act">принимает оплату от туристов</div></li>
-        <li><div class="who">Хадижа</div><div class="act">если заключаем договор — оформляет его</div></li>
-      </ol>
-
-      <div class="branch" style="margin-top:6px;border-left-color:#854f0b">
-        <b>Если школа / учитель, бесплатный приезд</b> — дальше как в сценарии со школьниками:
-      </div>
-      <ol class="flow" style="margin-top:10px">
-        <li><div class="who">Хадижа</div><div class="act">ведёт коммуникацию со школой, дальше тот же процесс координации (Раиса, экскурсия, при необходимости мастер-класс)</div></li>
-      </ol>
-
-      <div class="branch" style="margin-top:6px;border-left-color:#993c1d">
-        <b>Если запрос на показ телескопа</b> — дальше как в сценарии с телескопом:
-      </div>
-      <ol class="flow" style="margin-top:10px">
-        <li><div class="who">Хадижа</div><div class="act">связывается с Русланом, согласует время наблюдения</div></li>
-      </ol>
+    <div class="diagram-row">
+      <span style="color:var(--muted);font-size:12px">Школа?</span>
+      <div class="diagram-arrow">→</div>
+      <div class="diagram-decision">Да: бесплатно</div>
     </div>
-  </details>
+    <div class="diagram-row">
+      <span style="color:var(--muted);font-size:12px">Физ. лицо?</span>
+      <div class="diagram-arrow">→</div>
+      <div class="diagram-decision">Да: гид дает ссылку на донаты</div>
+    </div>
+  </div>
+
+  <div class="flow-diagram">
+    <h4>Хадижа информирует в любом случае:</h4>
+    <div class="diagram-row">
+      <div class="diagram-box" style="background:#3d7eea;color:#fff">Хадижа</div>
+      <div class="diagram-arrow">→</div>
+      <div class="diagram-box">Умайра</div>
+    </div>
+    <div class="diagram-note">Сколько человек, когда будет. Решают вместе программу.</div>
+    <div class="diagram-row">
+      <div class="diagram-box" style="background:#3d7eea;color:#fff">Хадижа</div>
+      <div class="diagram-arrow">→</div>
+      <div class="diagram-box">Раиса</div>
+    </div>
+    <div class="diagram-note">Сколько человек, когда будет, кто едет.</div>
+  </div>
+
+  <div class="flow-diagram">
+    <h4>Умайра привлекает специалистов:</h4>
+    <div class="diagram-row">
+      <span style="color:var(--muted);font-size:12px">Нужен гид?</span>
+      <div class="diagram-arrow">→</div>
+      <div class="diagram-box">Умайра ↔ Сулейман</div>
+    </div>
+    <div class="diagram-row">
+      <span style="color:var(--muted);font-size:12px">Нужен астроном?</span>
+      <div class="diagram-arrow">→</div>
+      <div class="diagram-box">Умайра ↔ Руслан</div>
+    </div>
+    <div class="diagram-row">
+      <span style="color:var(--muted);font-size:12px">Нужен кузнец?</span>
+      <div class="diagram-arrow">→</div>
+      <div class="diagram-box">Умайра ↔ Кузнец</div>
+    </div>
+  </div>
+
+  <div class="flow-diagram">
+    <h4>Коммуникация:</h4>
+    <div class="diagram-note">✓ Все общение по туризму в общем чате</div>
+    <div class="diagram-note">✓ Личные созвоны: информация о договорённостях дублируется в чат</div>
+  </div>
+
+  <div class="flow-diagram">
+    <h4>Если тур запланированный:</h4>
+    <div class="diagram-row">
+      <div class="diagram-box" style="background:#3d7eea;color:#fff">Паша</div>
+      <div class="diagram-arrow">←</div>
+      <span style="font-size:12px">Делаем КП и анонс</span>
+    </div>
+    <div class="diagram-note">✓ Большие туры сопровождает фотограф (контент) — Ева</div>
+  </div>
 
   </div>
   </details>
