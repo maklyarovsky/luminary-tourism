@@ -135,10 +135,7 @@
   .diagram-decision{background:#fff3cd;border:1px solid #ffeaa7;border-radius:6px;padding:8px 12px;color:#856404;font-size:12px;min-width:150px}
   .diagram-note{margin-top:8px;padding:8px 12px;background:#e9f7f0;border-left:3px solid var(--ok);font-size:12px;color:#1d9e75;line-height:1.4}
   .scheme-stage{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;margin-bottom:20px}
-  .scheme-stage-label{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:14px}
   .scheme-svg{width:100%;height:auto;display:block}
-  .scheme-connector{display:flex;justify-content:center;padding:2px 0 14px}
-  .scheme-connector svg{width:20px;height:24px}
 </style>
 </head>
 <body>
@@ -331,184 +328,141 @@
   <h3 style="margin-top:0;font-size:16px;color:var(--ink)">Поток входящих заявок</h3>
 
   <div class="scheme-stage">
-    <div class="scheme-stage-label">Шаг 1 — источники заявок</div>
-    <svg class="scheme-svg" viewBox="0 0 680 360" role="img">
-      <title>Источники входящих заявок на туры</title>
-      <desc>Три источника заявок — Instagram, форма на сайте и звонки — сходятся к Хадиже, которая принимает и координирует все обращения</desc>
+    <svg class="scheme-svg" viewBox="0 0 680 1380" role="img">
+      <title>Полная схема обработки заявок на туры в Люминари</title>
+      <desc>Единая схема от поступления заявки через Instagram, форму сайта или звонок, через решение Хадижи по типу клиента, информирование Умайры и Раисы, подключение специалистов, до финальной подготовки КП и анонса Пашой</desc>
       <defs>
-        <marker id="arr1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <marker id="arrF" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
           <path d="M2 1L8 5L2 9" fill="none" stroke="#5b5b73" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </marker>
       </defs>
-      <rect x="40" y="40" width="220" height="56" rx="8" fill="#f5f7fc" stroke="#e3e8f4" stroke-width="0.5"/>
-      <text x="150" y="60" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#1a1a2e">Instagram</text>
-      <text x="150" y="78" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#5b5b73">Принимает Паша</text>
 
-      <rect x="40" y="152" width="220" height="56" rx="8" fill="#f5f7fc" stroke="#e3e8f4" stroke-width="0.5"/>
-      <text x="150" y="172" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#1a1a2e">Форма на сайте</text>
-      <text x="150" y="190" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#5b5b73">Принимает Хадижа</text>
+      <text x="40" y="28" font-size="11" font-weight="600" fill="#9a9ab0" style="text-transform:uppercase;letter-spacing:.04em">Шаг 1 — источники заявок</text>
 
-      <rect x="40" y="264" width="220" height="56" rx="8" fill="#f5f7fc" stroke="#e3e8f4" stroke-width="0.5"/>
-      <text x="150" y="284" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#1a1a2e">Звонок</text>
-      <text x="150" y="302" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#5b5b73">Раиса, Вадим, Сулейман</text>
+      <rect x="40" y="48" width="220" height="56" rx="8" fill="#f5f7fc" stroke="#e3e8f4" stroke-width="0.5"/>
+      <text x="150" y="68" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#1a1a2e">Instagram</text>
+      <text x="150" y="86" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#5b5b73">Принимает Паша</text>
 
-      <path d="M 260 68 L 340 68 L 340 145 L 420 145" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arr1)"/>
-      <path d="M 260 180 L 420 180" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arr1)"/>
-      <path d="M 260 292 L 340 292 L 340 215 L 420 215" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arr1)"/>
+      <rect x="40" y="160" width="220" height="56" rx="8" fill="#f5f7fc" stroke="#e3e8f4" stroke-width="0.5"/>
+      <text x="150" y="180" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#1a1a2e">Форма на сайте</text>
+      <text x="150" y="198" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#5b5b73">Принимает Хадижа</text>
 
-      <rect x="420" y="120" width="220" height="120" rx="8" fill="#3D7EEA" stroke="#3D7EEA" stroke-width="0.5"/>
-      <circle cx="600" cy="148" r="20" fill="#fff" stroke="#0C447C" stroke-width="1"/>
-      <text x="600" y="148" font-size="22" text-anchor="middle" dominant-baseline="central">🦆</text>
-      <text x="430" y="190" font-size="14" font-weight="500" dominant-baseline="central" fill="#fff">Хадижа</text>
-      <text x="430" y="210" font-size="12" dominant-baseline="central" fill="#e6f1fb">Принимает и решает,</text>
-      <text x="430" y="226" font-size="12" dominant-baseline="central" fill="#e6f1fb">координирует процесс</text>
-    </svg>
-  </div>
+      <rect x="40" y="272" width="220" height="56" rx="8" fill="#f5f7fc" stroke="#e3e8f4" stroke-width="0.5"/>
+      <text x="150" y="292" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#1a1a2e">Звонок</text>
+      <text x="150" y="310" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#5b5b73">Раиса, Вадим, Сулейман</text>
 
-  <div class="scheme-connector"><svg viewBox="0 0 20 24"><path d="M10 0 L10 18" stroke="#c7cce0" stroke-width="2" fill="none"/><path d="M4 14 L10 22 L16 14" stroke="#c7cce0" stroke-width="2" fill="none"/></svg></div>
+      <path d="M 260 76 C 340 76, 340 152, 420 152" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arrF)"/>
+      <path d="M 260 188 C 340 188, 340 188, 420 188" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arrF)"/>
+      <path d="M 260 300 C 340 300, 340 224, 420 224" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arrF)"/>
 
-  <div class="scheme-stage">
-    <div class="scheme-stage-label">Шаг 2 — решение по типу клиента</div>
-    <svg class="scheme-svg" viewBox="0 0 680 300" role="img">
-      <title>Решения Хадижи по типу обращения</title>
-      <desc>В зависимости от типа клиента — организация, школа или физическое лицо — Хадижа выбирает разный путь оплаты или документооборота</desc>
-      <defs>
-        <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-          <path d="M2 1L8 5L2 9" fill="none" stroke="#5b5b73" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </marker>
-      </defs>
-      <rect x="270" y="20" width="140" height="44" rx="8" fill="#3D7EEA" stroke="#3D7EEA" stroke-width="0.5"/>
-      <text x="340" y="42" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#fff">Хадижа</text>
+      <rect x="420" y="128" width="220" height="120" rx="8" fill="#3D7EEA" stroke="#3D7EEA" stroke-width="0.5"/>
+      <circle cx="600" cy="156" r="20" fill="#fff" stroke="#0C447C" stroke-width="1"/>
+      <text x="600" y="156" font-size="22" text-anchor="middle" dominant-baseline="central">🦆</text>
+      <text x="430" y="198" font-size="14" font-weight="500" dominant-baseline="central" fill="#fff">Хадижа</text>
+      <text x="430" y="218" font-size="12" dominant-baseline="central" fill="#e6f1fb">Принимает и решает,</text>
+      <text x="430" y="234" font-size="12" dominant-baseline="central" fill="#e6f1fb">координирует процесс</text>
 
-      <path d="M 340 64 L 340 90 L 110 90 L 110 116" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arr2)"/>
-      <path d="M 340 64 L 340 116" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arr2)"/>
-      <path d="M 340 64 L 340 90 L 570 90 L 570 116" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arr2)"/>
+      <path d="M 530 248 C 530 290, 340 290, 340 336" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arrF)"/>
 
-      <rect x="40" y="116" width="140" height="56" rx="8" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
-      <text x="110" y="136" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#633806">Организация</text>
-      <text x="110" y="154" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#854F0B">Договор, Фатижа</text>
+      <text x="40" y="382" font-size="11" font-weight="600" fill="#9a9ab0" style="text-transform:uppercase;letter-spacing:.04em">Шаг 2 — решение по типу клиента</text>
 
-      <rect x="270" y="116" width="140" height="56" rx="8" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
-      <text x="340" y="136" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#633806">Школа</text>
-      <text x="340" y="154" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#854F0B">Бесплатно</text>
+      <rect x="270" y="402" width="140" height="44" rx="8" fill="#3D7EEA" stroke="#3D7EEA" stroke-width="0.5"/>
+      <text x="340" y="424" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#fff">Хадижа</text>
 
-      <rect x="500" y="116" width="140" height="56" rx="8" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
-      <text x="570" y="136" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#633806">Физ. лицо</text>
-      <text x="570" y="154" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#854F0B">Ссылка на донат</text>
+      <path d="M 340 446 C 340 470, 110 470, 110 494" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arrF)"/>
+      <path d="M 340 446 L 340 494" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arrF)"/>
+      <path d="M 340 446 C 340 470, 570 470, 570 494" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arrF)"/>
 
-      <line x1="110" y1="172" x2="110" y2="200" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arr2)"/>
-      <line x1="340" y1="172" x2="340" y2="200" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arr2)"/>
-      <line x1="570" y1="172" x2="570" y2="200" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arr2)"/>
+      <rect x="40" y="494" width="140" height="56" rx="8" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+      <text x="110" y="514" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#633806">Организация</text>
+      <text x="110" y="532" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#854F0B">Договор, Фатижа</text>
 
-      <text x="110" y="216" font-size="12" text-anchor="middle" fill="#5b5b73">Делаем договор</text>
-      <text x="340" y="216" font-size="12" text-anchor="middle" fill="#5b5b73">Школьные туры</text>
-      <text x="340" y="232" font-size="12" text-anchor="middle" fill="#5b5b73">без оплаты</text>
-      <text x="570" y="216" font-size="12" text-anchor="middle" fill="#5b5b73">Гид отправляет</text>
-      <text x="570" y="232" font-size="12" text-anchor="middle" fill="#5b5b73">ссылку гостю</text>
-    </svg>
-  </div>
+      <rect x="270" y="494" width="140" height="56" rx="8" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+      <text x="340" y="514" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#633806">Школа</text>
+      <text x="340" y="532" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#854F0B">Бесплатно</text>
 
-  <div class="scheme-connector"><svg viewBox="0 0 20 24"><path d="M10 0 L10 18" stroke="#c7cce0" stroke-width="2" fill="none"/><path d="M4 14 L10 22 L16 14" stroke="#c7cce0" stroke-width="2" fill="none"/></svg></div>
+      <rect x="500" y="494" width="140" height="56" rx="8" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+      <text x="570" y="514" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#633806">Физ. лицо</text>
+      <text x="570" y="532" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#854F0B">Ссылка на донат</text>
 
-  <div class="scheme-stage">
-    <div class="scheme-stage-label">Шаг 3 — информирование команды</div>
-    <svg class="scheme-svg" viewBox="0 0 680 220" role="img">
-      <title>Хадижа информирует Умайру и Раису в любом случае</title>
-      <desc>Независимо от типа заявки, Хадижа всегда сообщает Умайре программу тура и Раисе расписание приезда</desc>
-      <defs>
-        <marker id="arr3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-          <path d="M2 1L8 5L2 9" fill="none" stroke="#5b5b73" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </marker>
-      </defs>
-      <rect x="270" y="20" width="140" height="44" rx="8" fill="#3D7EEA" stroke="#3D7EEA" stroke-width="0.5"/>
-      <text x="340" y="42" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#fff">Хадижа</text>
-      <text x="340" y="78" font-size="12" text-anchor="middle" fill="#5b5b73">Информирует в любом случае</text>
+      <line x1="110" y1="550" x2="110" y2="578" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arrF)"/>
+      <line x1="340" y1="550" x2="340" y2="578" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arrF)"/>
+      <line x1="570" y1="550" x2="570" y2="578" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arrF)"/>
 
-      <path d="M 300 64 L 300 100 L 180 100 L 180 120" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arr3)"/>
-      <path d="M 380 64 L 380 100 L 500 100 L 500 120" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arr3)"/>
+      <text x="110" y="594" font-size="12" text-anchor="middle" fill="#5b5b73">Делаем договор</text>
+      <text x="340" y="594" font-size="12" text-anchor="middle" fill="#5b5b73">Школьные туры</text>
+      <text x="340" y="610" font-size="12" text-anchor="middle" fill="#5b5b73">без оплаты</text>
+      <text x="570" y="594" font-size="12" text-anchor="middle" fill="#5b5b73">Гид отправляет</text>
+      <text x="570" y="610" font-size="12" text-anchor="middle" fill="#5b5b73">ссылку гостю</text>
 
-      <rect x="90" y="120" width="180" height="56" rx="8" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
-      <text x="180" y="140" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#04342C">Умайра</text>
-      <text x="180" y="158" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#0F6E56">Сколько, когда, программа</text>
+      <path d="M 110 626 C 110 662, 340 662, 340 662 C 340 662, 570 662, 570 626" fill="none" stroke="#5b5b73" stroke-width="1.5"/>
+      <path d="M 340 662 L 340 688" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arrF)"/>
 
-      <rect x="410" y="120" width="180" height="56" rx="8" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
-      <text x="500" y="140" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#04342C">Раиса</text>
-      <text x="500" y="158" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#0F6E56">Сколько, когда, кто едет</text>
-    </svg>
-  </div>
+      <text x="40" y="734" font-size="11" font-weight="600" fill="#9a9ab0" style="text-transform:uppercase;letter-spacing:.04em">Шаг 3 — информирование команды (в любом случае)</text>
 
-  <div class="scheme-connector"><svg viewBox="0 0 20 24"><path d="M10 0 L10 18" stroke="#c7cce0" stroke-width="2" fill="none"/><path d="M4 14 L10 22 L16 14" stroke="#c7cce0" stroke-width="2" fill="none"/></svg></div>
+      <rect x="90" y="754" width="180" height="56" rx="8" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
+      <text x="180" y="774" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#04342C">Умайра</text>
+      <text x="180" y="792" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#0F6E56">Сколько, когда, программа</text>
 
-  <div class="scheme-stage">
-    <div class="scheme-stage-label">Шаг 4 — подключение специалистов</div>
-    <svg class="scheme-svg" viewBox="0 0 680 280" role="img">
-      <title>Умайра привлекает специалистов по программе тура</title>
-      <desc>В зависимости от того, что нужно туру, Умайра связывается с гидом Сулейманом, астрономом Русланом, кузнецом, или с Вадимом, если требуется размещение на двухдневном туре</desc>
-      <defs>
-        <marker id="arr4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-          <path d="M2 1L8 5L2 9" fill="none" stroke="#5b5b73" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </marker>
-      </defs>
-      <rect x="270" y="20" width="140" height="44" rx="8" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
-      <text x="340" y="42" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#04342C">Умайра</text>
+      <rect x="410" y="754" width="180" height="56" rx="8" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
+      <text x="500" y="774" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#04342C">Раиса</text>
+      <text x="500" y="792" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#0F6E56">Сколько, когда, кто едет</text>
 
-      <path d="M 300 64 L 300 90 L 105 90 L 105 116" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arr4)"/>
-      <path d="M 320 64 L 320 90 L 245 90 L 245 116" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arr4)"/>
-      <path d="M 360 64 L 360 90 L 435 90 L 435 116" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arr4)"/>
-      <path d="M 380 64 L 380 90 L 575 90 L 575 116" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arr4)"/>
+      <path d="M 180 810 C 180 846, 340 846, 340 846 C 340 846, 500 846, 500 810" fill="none" stroke="#5b5b73" stroke-width="1.5"/>
+      <path d="M 340 846 L 340 872" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arrF)"/>
 
-      <rect x="35" y="116" width="140" height="56" rx="8" fill="#FAECE7" stroke="#D85A30" stroke-width="0.5"/>
-      <text x="105" y="136" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C">Нужен гид</text>
-      <text x="105" y="154" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#712B13">↔ Сулейман</text>
+      <text x="40" y="918" font-size="11" font-weight="600" fill="#9a9ab0" style="text-transform:uppercase;letter-spacing:.04em">Шаг 4 — подключение специалистов</text>
 
-      <rect x="175" y="116" width="140" height="56" rx="8" fill="#FAECE7" stroke="#D85A30" stroke-width="0.5"/>
-      <text x="245" y="136" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C">Нужен астроном</text>
-      <text x="245" y="154" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#712B13">↔ Руслан</text>
+      <rect x="270" y="938" width="140" height="44" rx="8" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
+      <text x="340" y="960" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#04342C">Умайра</text>
 
-      <rect x="365" y="116" width="140" height="56" rx="8" fill="#FAECE7" stroke="#D85A30" stroke-width="0.5"/>
-      <text x="435" y="136" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C">Нужен кузнец</text>
-      <text x="435" y="154" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#712B13">↔ Кузнец</text>
+      <path d="M 300 982 C 300 1004, 105 1004, 105 1026" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arrF)"/>
+      <path d="M 320 982 C 320 1004, 245 1004, 245 1026" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arrF)"/>
+      <path d="M 360 982 C 360 1004, 435 1004, 435 1026" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arrF)"/>
+      <path d="M 380 982 C 380 1004, 575 1004, 575 1026" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arrF)"/>
 
-      <rect x="505" y="116" width="140" height="56" rx="8" fill="#FAECE7" stroke="#D85A30" stroke-width="0.5"/>
-      <text x="575" y="132" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C">Двухдневный +</text>
-      <text x="575" y="148" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#712B13">размещение</text>
-      <text x="575" y="164" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#712B13">↔ Вадим</text>
+      <rect x="35" y="1026" width="140" height="56" rx="8" fill="#FAECE7" stroke="#D85A30" stroke-width="0.5"/>
+      <text x="105" y="1046" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C">Нужен гид</text>
+      <text x="105" y="1064" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#712B13">↔ Сулейман</text>
 
-      <text x="340" y="210" font-size="12" text-anchor="middle" fill="#5b5b73">Все общение по туризму — в общем чате.</text>
-      <text x="340" y="228" font-size="12" text-anchor="middle" fill="#5b5b73">Договорённости с личных созвонов дублируются туда же.</text>
-    </svg>
-  </div>
+      <rect x="175" y="1026" width="140" height="56" rx="8" fill="#FAECE7" stroke="#D85A30" stroke-width="0.5"/>
+      <text x="245" y="1046" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C">Нужен астроном</text>
+      <text x="245" y="1064" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#712B13">↔ Руслан</text>
 
-  <div class="scheme-connector"><svg viewBox="0 0 20 24"><path d="M10 0 L10 18" stroke="#c7cce0" stroke-width="2" fill="none"/><path d="M4 14 L10 22 L16 14" stroke="#c7cce0" stroke-width="2" fill="none"/></svg></div>
+      <rect x="365" y="1026" width="140" height="56" rx="8" fill="#FAECE7" stroke="#D85A30" stroke-width="0.5"/>
+      <text x="435" y="1046" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C">Нужен кузнец</text>
+      <text x="435" y="1064" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#712B13">↔ Кузнец</text>
 
-  <div class="scheme-stage" style="margin-bottom:0">
-    <div class="scheme-stage-label">Шаг 5 — если тур запланированный</div>
-    <svg class="scheme-svg" viewBox="0 0 680 180" role="img">
-      <title>Финальный шаг для запланированных туров</title>
-      <desc>Когда тур запланирован, Пашу информируют для подготовки коммерческого предложения и анонса, а большие туры дополнительно сопровождает фотограф Ева для съёмки контента</desc>
-      <defs>
-        <marker id="arr5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-          <path d="M2 1L8 5L2 9" fill="none" stroke="#5b5b73" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </marker>
-      </defs>
-      <rect x="40" y="60" width="180" height="56" rx="8" fill="#f5f7fc" stroke="#e3e8f4" stroke-width="0.5"/>
-      <text x="130" y="80" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#1a1a2e">Тур запланирован</text>
-      <text x="130" y="98" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#5b5b73">Дата и группа известны</text>
+      <rect x="505" y="1026" width="140" height="56" rx="8" fill="#FAECE7" stroke="#D85A30" stroke-width="0.5"/>
+      <text x="575" y="1042" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C">Двухдневный +</text>
+      <text x="575" y="1058" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#712B13">размещение</text>
+      <text x="575" y="1074" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#712B13">↔ Вадим</text>
 
-      <line x1="220" y1="88" x2="280" y2="88" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arr5)"/>
+      <text x="340" y="1120" font-size="12" text-anchor="middle" fill="#5b5b73">Все общение по туризму — в общем чате.</text>
+      <text x="340" y="1138" font-size="12" text-anchor="middle" fill="#5b5b73">Договорённости с личных созвонов дублируются туда же.</text>
 
-      <rect x="280" y="60" width="180" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
-      <text x="370" y="80" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#26215C">Паша</text>
-      <text x="370" y="98" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#3C3489">Делает КП и анонс</text>
+      <path d="M 340 1082 L 340 1172" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arrF)"/>
 
-      <line x1="460" y1="88" x2="520" y2="88" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arr5)"/>
+      <text x="40" y="1222" font-size="11" font-weight="600" fill="#9a9ab0" style="text-transform:uppercase;letter-spacing:.04em">Шаг 5 — если тур запланированный</text>
 
-      <rect x="520" y="60" width="120" height="56" rx="8" fill="#FBEAF0" stroke="#D4537E" stroke-width="0.5"/>
-      <text x="580" y="78" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#4B1528">Ева</text>
-      <text x="580" y="96" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#72243E">Фотограф (контент)</text>
+      <rect x="40" y="1242" width="180" height="56" rx="8" fill="#f5f7fc" stroke="#e3e8f4" stroke-width="0.5"/>
+      <text x="130" y="1262" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#1a1a2e">Тур запланирован</text>
+      <text x="130" y="1280" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#5b5b73">Дата и группа известны</text>
 
-      <text x="580" y="140" font-size="12" text-anchor="middle" fill="#5b5b73">только на больших</text>
-      <text x="580" y="156" font-size="12" text-anchor="middle" fill="#5b5b73">турах</text>
+      <path d="M 220 1270 C 250 1270, 250 1270, 280 1270" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arrF)"/>
+
+      <rect x="280" y="1242" width="180" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+      <text x="370" y="1262" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#26215C">Паша</text>
+      <text x="370" y="1280" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#3C3489">Делает КП и анонс</text>
+
+      <path d="M 460 1270 C 490 1270, 490 1270, 520 1270" fill="none" stroke="#5b5b73" stroke-width="1.5" marker-end="url(#arrF)"/>
+
+      <rect x="520" y="1242" width="120" height="56" rx="8" fill="#FBEAF0" stroke="#D4537E" stroke-width="0.5"/>
+      <text x="580" y="1260" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#4B1528">Ева</text>
+      <text x="580" y="1278" font-size="12" text-anchor="middle" dominant-baseline="central" fill="#72243E">Фотограф (контент)</text>
+
+      <text x="580" y="1320" font-size="12" text-anchor="middle" fill="#5b5b73">только на больших</text>
+      <text x="580" y="1336" font-size="12" text-anchor="middle" fill="#5b5b73">турах</text>
     </svg>
   </div>
 
