@@ -155,8 +155,10 @@
   .builder-total .t-label{font-size:15px;font-weight:600;color:var(--ink)}
   .builder-total .t-val{font-size:22px;font-weight:700;color:var(--blue)}
   .builder-tiers{font-size:11px;color:#9a9ab0;margin-top:2px}
-  .builder-reset{margin-top:14px;font-size:12.5px;color:var(--muted);background:none;border:1px solid var(--line);border-radius:8px;padding:7px 14px;cursor:pointer}
+  .builder-reset{font-size:12.5px;color:var(--muted);background:none;border:1px solid var(--line);border-radius:8px;padding:7px 14px;cursor:pointer}
   .builder-reset:hover{background:var(--card)}
+  .builder-calc{font-size:13px;font-weight:600;color:#fff;background:var(--blue);border:1px solid var(--blue);border-radius:8px;padding:8px 18px;cursor:pointer}
+  .builder-calc:hover{opacity:.9}
 </style>
 </head>
 <body>
@@ -578,7 +580,7 @@
       </div>
       <div class="builder-qty">
         <label>₽</label>
-        <input type="number" min="0" data-fixed="souvenir" placeholder="0" value="">
+        <input type="number" min="0" data-fixed="souvenir" placeholder="0" value="700">
       </div>
       <div class="builder-sum" data-sum="souvenir">0 ₽</div>
     </div>
@@ -685,7 +687,10 @@
 
   </div>
 
-  <button class="builder-reset" id="builder-reset">Сбросить конструктор</button>
+  <div style="display:flex;gap:10px;margin-top:14px">
+    <button class="builder-calc" id="builder-calc">Рассчитать</button>
+    <button class="builder-reset" id="builder-reset">Сбросить конструктор</button>
+  </div>
 
   </div>
   </details>
@@ -838,6 +843,11 @@
       inp.addEventListener('input', recalcAll);
       inp.addEventListener('change', recalcAll);
     });
+
+    var calcBtn = document.getElementById('builder-calc');
+    if (calcBtn) {
+      calcBtn.addEventListener('click', recalcAll);
+    }
 
     var resetBtn = document.getElementById('builder-reset');
     if (resetBtn) {
