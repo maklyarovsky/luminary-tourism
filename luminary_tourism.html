@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Люминари — туризм: кто за что отвечает</title>
+<style>
+  :root{
+    --blue:#3D7EEA;
+    --bar:#3D7EEA;
+    --card:#f5f7fc;
+    --ink:#1a1a2e;
+    --muted:#5b5b73;
+    --line:#e3e8f4;
+    --bg:#ffffff;
+    --ok:#1d9e75;
+    --warn:#ba7517;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1000px;margin:0 auto;padding:40px 24px 80px}
+  header h1{font-size:30px;font-weight:600;margin:0 0 6px;letter-spacing:-.01em}
+  header p.sub{color:var(--muted);margin:0 0 4px;font-size:16px}
+  .bar{width:3px;height:26px;background:var(--bar);display:inline-block;vertical-align:middle;margin-right:12px;border-radius:2px}
+  h2{font-size:22px;font-weight:600;margin:48px 0 18px;display:flex;align-items:center;letter-spacing:-.01em}
+
+  /* roles */
+  .roles{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+  .role{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .role .name{font-weight:600;font-size:16px;margin:0 0 2px}
+  .role .tag{display:inline-block;font-size:12px;font-weight:600;color:var(--blue);background:#e6f0ff;border-radius:20px;padding:2px 10px;margin-bottom:8px}
+  .role .desc{font-size:14px;color:var(--muted);margin:0}
+  .role.hub{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue) inset}
+  .role .tag.hub{color:#fff;background:var(--blue)}
+
+  /* scenarios */
+  .scen{border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden;background:#fff}
+  .scen summary{
+    list-style:none;cursor:pointer;padding:18px 20px;display:flex;align-items:center;gap:14px;
+    font-size:17px;font-weight:600;user-select:none;
+  }
+  .scen summary::-webkit-details-marker{display:none}
+  .scen summary:hover{background:#fafbfe}
+  .scen summary .chan{
+    font-size:12px;font-weight:600;border-radius:20px;padding:3px 11px;white-space:nowrap;
+  }
+  .chan.inst{color:#0c447c;background:#e6f1fb}
+  .chan.call{color:#854f0b;background:#faeeda}
+  .chan.walk{color:#993c1d;background:#faece7}
+  .scen summary .arrow{margin-left:auto;color:var(--muted);transition:transform .2s;font-size:14px}
+  .scen[open] summary .arrow{transform:rotate(90deg)}
+  .body{padding:0 20px 22px;border-top:1px solid var(--line)}
+  .meta{display:flex;gap:24px;flex-wrap:wrap;margin:16px 0 4px;font-size:13px}
+  .meta b{color:var(--blue)}
+  .meta span{color:var(--muted)}
+
+  /* flow steps */
+  .flow{list-style:none;padding:0;margin:18px 0 0;counter-reset:s}
+  .flow li{position:relative;padding:0 0 18px 46px;counter-increment:s}
+  .flow li:before{
+    content:counter(s);position:absolute;left:0;top:0;
+    width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;
+  }
+  .flow li:not(:last-child):after{
+    content:"";position:absolute;left:14px;top:30px;bottom:0;width:2px;background:var(--line);
+  }
+  .flow .who{font-weight:600;font-size:15px}
+  .flow .act{font-size:14px;color:var(--muted);margin-top:1px}
+  .branch{background:var(--card);border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13.5px;color:var(--muted);border-left:3px solid var(--blue)}
+  .branch b{color:var(--ink);font-weight:600}
+
+  .todo{margin-top:48px;background:#fffaf0;border:1px solid #f3e3c0;border-radius:12px;padding:18px 22px}
+  .todo h3{margin:0 0 8px;font-size:16px;color:var(--warn)}
+  .todo ul{margin:0;padding-left:20px;font-size:14px;color:var(--muted)}
+  .todo li{margin-bottom:4px}
+  footer{margin-top:40px;color:var(--muted);font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1><span class="bar"></span>Туризм в Люминари</h1>
+    <p class="sub">Кто за что отвечает и что делать в каждой ситуации</p>
+  </header>
+
+  <h2><span class="bar"></span>Команда и роли</h2>
+  <div class="roles">
+    <div class="role hub">
+      <span class="tag hub">диспетчер</span>
+      <p class="name">Хадижа</p>
+      <p class="desc">Комьюнити-менеджер. К ней стекаются все обращения, она координирует исполнителей и ведёт договор.</p>
+    </div>
+    <div class="role">
+      <span class="tag">приём</span>
+      <p class="name">Павел</p>
+      <p class="desc">Первичный приём обращений из Instagram, передаёт Хадиже.</p>
+    </div>
+    <div class="role">
+      <span class="tag">админ</span>
+      <p class="name">Раиса</p>
+      <p class="desc">Администратор. Принимает звонки, информируется по приездам, связывается с тётей Беллой по мастер-классам.</p>
+    </div>
+    <div class="role">
+      <span class="tag">экскурсии</span>
+      <p class="name">Сулейман</p>
+      <p class="desc">Проводит экскурсии. Может принять звонок туриста и передать Хадиже.</p>
+    </div>
+    <div class="role">
+      <span class="tag">подстраховка</span>
+      <p class="name">Регина</p>
+      <p class="desc">Библиотекарь. Подстраховка по экскурсиям, если Сулейман занят.</p>
+    </div>
+    <div class="role">
+      <span class="tag">мастер-классы</span>
+      <p class="name">тётя Белла</p>
+      <p class="desc">Проводит мастер-классы, когда они входят в программу приезда.</p>
+    </div>
+    <div class="role">
+      <span class="tag">телескоп</span>
+      <p class="name">Астроном</p>
+      <p class="desc">Показ телескопа и наблюдения. Уточнить имя.</p>
+    </div>
+    <div class="role">
+      <span class="tag">контакт</span>
+      <p class="name">Вадим</p>
+      <p class="desc">Принимает звонки/обращения, передаёт Хадиже. Уточнить роль.</p>
+    </div>
+  </div>
+
+  <h2><span class="bar"></span>Сценарии</h2>
+
+  <details class="scen">
+    <summary>
+      <span class="chan inst">Instagram</span>
+      Туристы — платный приезд
+      <span class="arrow">▶</span>
+    </summary>
+    <div class="body">
+      <div class="meta">
+        <span>Запускает: <b>Павел</b></span>
+        <span>Координирует: <b>Хадижа</b></span>
+        <span>Финал. ответственный: <b>Хадижа</b></span>
+      </div>
+      <ol class="flow">
+        <li><div class="who">Павел</div><div class="act">принимает обращение в Instagram, передаёт Хадиже</div></li>
+        <li><div class="who">Хадижа</div><div class="act">берёт обращение в работу, информирует Раису</div></li>
+        <li><div class="who">Раиса + Сулейман</div><div class="act">Раиса в курсе приезда; Сулейман готовится провести экскурсию</div>
+          <div class="branch"><b>Подстраховка:</b> если Сулейман занят — экскурсию ведёт Регина.</div></li>
+        <li><div class="who">Раиса → тётя Белла</div><div class="act">если в программе нужен мастер-класс — Раиса связывается с тётей Беллой</div></li>
+        <li><div class="who">Хадижа</div><div class="act">если заключаем договор — оформляет его</div></li>
+      </ol>
+    </div>
+  </details>
+
+  <details class="scen">
+    <summary>
+      <span class="chan inst">Instagram</span>
+      Школа / учитель — бесплатный приезд школьников
+      <span class="arrow">▶</span>
+    </summary>
+    <div class="body">
+      <div class="meta">
+        <span>Запускает: <b>Павел</b></span>
+        <span>Координирует: <b>Хадижа</b></span>
+        <span>Финал. ответственный: <b>Хадижа</b></span>
+      </div>
+      <ol class="flow">
+        <li><div class="who">Павел</div><div class="act">принимает обращение в Instagram, передаёт Хадиже</div></li>
+        <li><div class="who">Хадижа</div><div class="act">ведёт коммуникацию со школой, дальше тот же процесс координации (Раиса, экскурсия, при необходимости мастер-класс)</div></li>
+      </ol>
+      <div class="branch" style="margin-top:14px"><b>Уточнить:</b> отличается ли цепочка для бесплатного приезда — кто согласовывает даты, есть ли лимит групп, нужен ли договор/согласие от школы.</div>
+    </div>
+  </details>
+
+  <details class="scen">
+    <summary>
+      <span class="chan inst">Instagram</span>
+      Запрос на показ телескопа
+      <span class="arrow">▶</span>
+    </summary>
+    <div class="body">
+      <div class="meta">
+        <span>Запускает: <b>Павел</b></span>
+        <span>Координирует: <b>Хадижа</b></span>
+        <span>Исполнитель: <b>Астроном</b></span>
+      </div>
+      <ol class="flow">
+        <li><div class="who">Павел</div><div class="act">направляет обращение Хадиже</div></li>
+        <li><div class="who">Хадижа</div><div class="act">связывается с астрономом, согласует время наблюдения</div></li>
+      </ol>
+    </div>
+  </details>
+
+  <details class="scen">
+    <summary>
+      <span class="chan walk">У ворот</span>
+      Туристы случайно приехали к Люминари
+      <span class="arrow">▶</span>
+    </summary>
+    <div class="body">
+      <div class="meta">
+        <span>Запускает: <b>кто заметил</b></span>
+        <span>Канал: <b>общий чат</b></span>
+      </div>
+      <ol class="flow">
+        <li><div class="who">Любой сотрудник</div><div class="act">пишет в общий чат — информирует всех</div></li>
+        <li><div class="who">Кто свободен</div><div class="act">проводит экскурсию во дворе</div></li>
+        <li><div class="who">Кто свободен</div><div class="act">если есть время и возможность — проводит гостей внутрь центра</div></li>
+      </ol>
+    </div>
+  </details>
+
+  <details class="scen">
+    <summary>
+      <span class="chan call">Звонок</span>
+      Обращение не через Instagram (звонок)
+      <span class="arrow">▶</span>
+    </summary>
+    <div class="body">
+      <div class="meta">
+        <span>Принимает: <b>Раиса / Сулейман / Вадим</b></span>
+        <span>Координирует: <b>Хадижа</b></span>
+      </div>
+      <ol class="flow">
+        <li><div class="who">Раиса, Сулейман или Вадим</div><div class="act">принимает звонок, передаёт Хадиже</div></li>
+        <li><div class="who">Хадижа</div><div class="act">берёт в работу — дальше процесс как при обращении в Instagram (тип приезда определяет цепочку)</div></li>
+      </ol>
+    </div>
+  </details>
+
+  <div class="todo">
+    <h3>Допилить</h3>
+    <ul>
+      <li>Имя астронома и роль Вадима (кто он на месте).</li>
+      <li>Чем именно отличается бесплатный школьный приезд от платного.</li>
+      <li>Что делать при отмене / переносе приезда.</li>
+      <li>Кто отвечает за деньги при платном приезде (приём оплаты, чек).</li>
+      <li>Размещение и питание гостей, если приезд на несколько дней.</li>
+      <li>ЧП во время визита (травма, конфликт) — отдельный сценарий.</li>
+    </ul>
+  </div>
+
+  <footer>Люминари · карта процессов · черновик v1</footer>
+</div>
+</body>
+</html>
