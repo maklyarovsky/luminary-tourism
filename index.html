@@ -125,13 +125,18 @@
     </div>
     <div class="role">
       <span class="tag">телескоп</span>
-      <p class="name">Астроном</p>
-      <p class="desc">Показ телескопа и наблюдения. Уточнить имя.</p>
+      <p class="name">Руслан</p>
+      <p class="desc">Астроном. Показ телескопа и наблюдения.</p>
     </div>
     <div class="role">
-      <span class="tag">контакт</span>
+      <span class="tag">упр. управляющий</span>
       <p class="name">Вадим</p>
-      <p class="desc">Принимает звонки/обращения, передаёт Хадиже. Уточнить роль.</p>
+      <p class="desc">Административный управляющий. Может принять обращение, передаёт Хадиже.</p>
+    </div>
+    <div class="role">
+      <span class="tag">оплата</span>
+      <p class="name">Фатижа</p>
+      <p class="desc">Принимает оплату при платном приезде.</p>
     </div>
   </div>
 
@@ -155,6 +160,7 @@
         <li><div class="who">Раиса + Сулейман</div><div class="act">Раиса в курсе приезда; Сулейман готовится провести экскурсию</div>
           <div class="branch"><b>Подстраховка:</b> если Сулейман занят — экскурсию ведёт Регина.</div></li>
         <li><div class="who">Раиса → тётя Белла</div><div class="act">если в программе нужен мастер-класс — Раиса связывается с тётей Беллой</div></li>
+        <li><div class="who">Фатижа</div><div class="act">принимает оплату от туристов</div></li>
         <li><div class="who">Хадижа</div><div class="act">если заключаем договор — оформляет его</div></li>
       </ol>
     </div>
@@ -190,11 +196,11 @@
       <div class="meta">
         <span>Запускает: <b>Павел</b></span>
         <span>Координирует: <b>Хадижа</b></span>
-        <span>Исполнитель: <b>Астроном</b></span>
+        <span>Исполнитель: <b>Руслан</b></span>
       </div>
       <ol class="flow">
         <li><div class="who">Павел</div><div class="act">направляет обращение Хадиже</div></li>
-        <li><div class="who">Хадижа</div><div class="act">связывается с астрономом, согласует время наблюдения</div></li>
+        <li><div class="who">Хадижа</div><div class="act">связывается с Русланом, согласует время наблюдения</div></li>
       </ol>
     </div>
   </details>
@@ -231,7 +237,33 @@
       </div>
       <ol class="flow">
         <li><div class="who">Раиса, Сулейман или Вадим</div><div class="act">принимает звонок, передаёт Хадиже</div></li>
-        <li><div class="who">Хадижа</div><div class="act">берёт в работу — дальше процесс как при обращении в Instagram (тип приезда определяет цепочку)</div></li>
+        <li><div class="who">Хадижа</div><div class="act">уточняет тип обращения и берёт его в работу</div></li>
+      </ol>
+
+      <div class="branch" style="margin-top:6px;border-left-color:#1d9e75">
+        <b>Если платный приезд туристов</b> — дальше как в сценарии «Туристы — платный приезд»:
+      </div>
+      <ol class="flow" style="margin-top:10px">
+        <li><div class="who">Хадижа</div><div class="act">берёт обращение в работу, информирует Раису</div></li>
+        <li><div class="who">Раиса + Сулейман</div><div class="act">Раиса в курсе приезда; Сулейман готовится провести экскурсию</div>
+          <div class="branch"><b>Подстраховка:</b> если Сулейман занят — экскурсию ведёт Регина.</div></li>
+        <li><div class="who">Раиса → тётя Белла</div><div class="act">если в программе нужен мастер-класс — Раиса связывается с тётей Беллой</div></li>
+        <li><div class="who">Фатижа</div><div class="act">принимает оплату от туристов</div></li>
+        <li><div class="who">Хадижа</div><div class="act">если заключаем договор — оформляет его</div></li>
+      </ol>
+
+      <div class="branch" style="margin-top:6px;border-left-color:#854f0b">
+        <b>Если школа / учитель, бесплатный приезд</b> — дальше как в сценарии со школьниками:
+      </div>
+      <ol class="flow" style="margin-top:10px">
+        <li><div class="who">Хадижа</div><div class="act">ведёт коммуникацию со школой, дальше тот же процесс координации (Раиса, экскурсия, при необходимости мастер-класс)</div></li>
+      </ol>
+
+      <div class="branch" style="margin-top:6px;border-left-color:#993c1d">
+        <b>Если запрос на показ телескопа</b> — дальше как в сценарии с телескопом:
+      </div>
+      <ol class="flow" style="margin-top:10px">
+        <li><div class="who">Хадижа</div><div class="act">связывается с Русланом, согласует время наблюдения</div></li>
       </ol>
     </div>
   </details>
@@ -239,10 +271,8 @@
   <div class="todo">
     <h3>Допилить</h3>
     <ul>
-      <li>Имя астронома и роль Вадима (кто он на месте).</li>
       <li>Чем именно отличается бесплатный школьный приезд от платного.</li>
       <li>Что делать при отмене / переносе приезда.</li>
-      <li>Кто отвечает за деньги при платном приезде (приём оплаты, чек).</li>
       <li>Размещение и питание гостей, если приезд на несколько дней.</li>
       <li>ЧП во время визита (травма, конфликт) — отдельный сценарий.</li>
     </ul>
