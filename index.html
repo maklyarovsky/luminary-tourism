@@ -559,7 +559,7 @@
       <input type="checkbox" class="builder-check" data-key="tea">
       <div class="builder-label">
         <div class="b-name">Чаепитие и конфеты</div>
-        <div class="b-rate">2–5 чел — 1500 ₽/чел · 6–12 — 2000 ₽/чел · 13–20 — 3000 ₽/чел</div>
+        <div class="b-rate">2–5 чел — 1500 ₽ · 6–12 — 2000 ₽ · 13–20 — 3000 ₽</div>
       </div>
       <div class="builder-qty">
         <label>чел.</label>
@@ -862,7 +862,7 @@
         var qtyInputT = builder.querySelector('[data-qty="' + key + '"]');
         var qtyT = parseInt(qtyInputT.value) || 0;
         var rateT = tiersTea(qtyT);
-        value = checked ? qtyT * rateT : 0;
+        value = checked ? rateT : 0;
       } else if (perPersonKeys.hasOwnProperty(key)) {
         var qtyInput2 = builder.querySelector('[data-qty="' + key + '"]');
         var qty2 = parseInt(qtyInput2.value) || 0;
