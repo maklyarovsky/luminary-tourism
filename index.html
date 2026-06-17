@@ -583,10 +583,15 @@
       <input type="checkbox" class="builder-check" data-key="souvenir">
       <div class="builder-label">
         <div class="b-name">Сувенирный набор</div>
+        <div class="b-rate">цена/чел × кол-во чел</div>
       </div>
       <div class="builder-qty">
-        <label>₽</label>
-        <input type="number" min="0" data-fixed="souvenir" placeholder="0" value="700">
+        <label>₽/чел</label>
+        <input type="number" min="0" data-rate="souvenir" placeholder="0" value="700" style="width:78px">
+      </div>
+      <div class="builder-qty">
+        <label>чел.</label>
+        <input type="number" min="0" data-qty="souvenir" placeholder="0">
       </div>
       <div class="builder-sum" data-sum="souvenir">0 ₽</div>
     </div>
@@ -595,10 +600,15 @@
       <input type="checkbox" class="builder-check" data-key="museum">
       <div class="builder-label">
         <div class="b-name">Билет в Ахтынский музей</div>
+        <div class="b-rate">цена/чел × кол-во чел</div>
       </div>
       <div class="builder-qty">
-        <label>₽</label>
-        <input type="number" min="0" data-fixed="museum" placeholder="0" value="200">
+        <label>₽/чел</label>
+        <input type="number" min="0" data-rate="museum" placeholder="0" value="200" style="width:78px">
+      </div>
+      <div class="builder-qty">
+        <label>чел.</label>
+        <input type="number" min="0" data-qty="museum" placeholder="0">
       </div>
       <div class="builder-sum" data-sum="museum">0 ₽</div>
     </div>
