@@ -229,12 +229,24 @@
 
     <div class="product">
       <div class="p-head">
-        <span class="p-name">Двухдневный тур из Дербента</span>
+        <span class="p-name">Двухдневный тур из Дербента: Ахты + Люминари + Хрюг + Хрюгский лес</span>
         <span class="p-tag">2 дня</span>
       </div>
-      <p class="p-desc">С размещением. Хайкинг в Хрюгский лес с утра или к Зрыхскому водопаду.</p>
+      <p class="p-desc">Трансфер, обед, ужин, продукты для похода, размещение включены.</p>
       <div class="p-calc">
-        <label>Себестоимость <input type="number" class="cost" placeholder="—"></label>
+        <div class="cost-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
+          <span>▶</span> Себестоимость (разбор)
+        </div>
+        <div class="cost-breakdown">
+          <label>Трансфер <input type="number" class="cost-item" placeholder="—"></label>
+          <label>Билеты в музей <input type="number" class="cost-item" placeholder="—" value="200"></label>
+          <label>Мастер-класс по чуду и обед <input type="number" class="cost-item" placeholder="—"></label>
+          <label>Ужин <input type="number" class="cost-item" placeholder="—"></label>
+          <label>Продукты в поход <input type="number" class="cost-item" placeholder="—"></label>
+          <label>Размещение <input type="number" class="cost-item" placeholder="—"></label>
+          <label>Продюсер тура <input type="number" class="cost-item" placeholder="—"></label>
+          <label style="font-weight:600;color:var(--ink);margin-top:4px;border-top:1px solid var(--line);padding-top:6px">Итого <input type="number" class="cost-total" placeholder="—" style="font-weight:600"></label>
+        </div>
         <label>Цена для туриста <input type="number" class="price" placeholder="—"></label>
         <label class="profit">Прибыль <span class="profit-val">—</span></label>
       </div>
