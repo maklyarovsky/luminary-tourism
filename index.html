@@ -757,9 +757,12 @@
 </div>
 <script>
   function recalc(card){
-    var cost = parseFloat(card.querySelector('.cost').value);
-    var price = parseFloat(card.querySelector('.price').value);
+    var costEl = card.querySelector('.cost');
+    var priceEl = card.querySelector('.price');
     var out = card.querySelector('.profit-val');
+    if (!costEl || !priceEl || !out) return;
+    var cost = parseFloat(costEl.value);
+    var price = parseFloat(priceEl.value);
     if (isNaN(cost) || isNaN(price)) { out.textContent = '—'; out.className = 'profit-val'; return; }
     var profit = price - cost;
     out.textContent = (profit >= 0 ? '+' : '') + profit + ' ₽';
